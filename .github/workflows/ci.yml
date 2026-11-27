@@ -1,0 +1,38 @@
+name: CampusLoop checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Run repository tests
+        run: npm test
+      - name: Check administrator JavaScript syntax
+        run: node --check js/admin.js
+      - name: Extract main page script
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          html = Path("index.html").read_text(encoding="utf-8")
+          scripts = re.findall(r"<script>(.*?)</script>", html, flags=re.S)
+          if not scripts:
+              raise SystemExit("No inline application script found in index.html")
+          Path("/tmp/campusloop-index-inline.js").write_text("\n".join(scripts), encoding="utf-8")
+          PY
+      - name: Check main page JavaScript syntax
+        run: node --check /tmp/campusloop-index-inline.js
