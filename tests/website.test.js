@@ -14,11 +14,11 @@ test('Generated product photography is included locally',()=>{
  for(const image of ['assets/books.jpg','assets/camera.jpg','assets/lamp.jpg']) assert.ok(fs.existsSync(image));
 });
 test('Seller photo upload, preview and compression are implemented',()=>{
- const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+ const html=fs.readFileSync('index.html','utf8');
  for(const phrase of ['id="itemPhotos"','multiple','photoPreview','compressListingPhoto','selectedPhotos.slice(0,5)']) assert.ok(html.includes(phrase));
 });
 test('Suggested campus items and photo-based product cards are present',()=>{
- const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+ const html=fs.readFileSync('index.html','utf8');
  assert.ok(html.includes('Suggested for your campus'));
  assert.ok(html.includes('function imageSrc(x)'));
 });
