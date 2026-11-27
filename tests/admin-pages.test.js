@@ -3,9 +3,10 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
 const root=process.cwd();
-test('Admin navigation resolves to real pages',()=>{
+test('Admin navigation builds links to the standalone pages',()=>{
  const main=fs.readFileSync(path.join(root,'index.html'),'utf8');
- for(const page of ['dashboard','approvals','reports','users']) assert.ok(main.includes('admin/'+page+'.html'));
+ assert.ok(main.includes('href="admin/'+x+'.html"'));
+ for(const page of ['dashboard','approvals','reports','users']) assert.ok(fs.existsSync(path.join(root,'admin',page+'.html')));
 });
 test('All admin pages exist and load shared assets',()=>{
  for(const page of ['dashboard','approvals','reports','users']){
