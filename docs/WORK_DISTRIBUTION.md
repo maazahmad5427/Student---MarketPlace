@@ -2,8 +2,8 @@
 
 | Member | Primary responsibility | Shared responsibility |
 |---|---|---|
-| Maaz Ahmad — 25F-3023 | Project integration, frontend architecture, JavaScript marketplace flows, GitHub repository and deployment configuration | Requirements review, testing, presentation |
-| Abeerah Amin — 25F-3048 | Figma UI/UX screens, visual style guide, clickable prototype, responsive design review | Frontend implementation, sequence diagrams, testing |
-| Wardah Waleed — 25F-3012 | UML component and sequence diagrams, architecture documentation, test case design and validation evidence | Frontend implementation, report consolidation, presentation |
+| Maaz Ahmad — 25F-3023 | Integration, frontend logic, repository management and demo preparation | Requirements review, testing and presentation |
+| Abeerah Amin — 25F-3048 | UI/UX design direction, Figma screens and visual consistency | Frontend review, diagram review and testing |
+| Wardah Waleed — 25F-3012 | UML/sequence diagrams, architecture notes and test-case design | Frontend review, report consolidation and presentation |
 
-All three members should review the full SRS, test the complete application, understand every major module, and rehearse the complete demonstration. Update this allocation to reflect the work each member actually completes; Git history must not falsely attribute commits to members who did not make them.
+All three members should understand the complete workflow and verify the final build. Update this allocation to reflect actual contributions; do not attribute work to a member who did not perform it.

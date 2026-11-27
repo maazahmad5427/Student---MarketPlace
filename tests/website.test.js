@@ -1,0 +1,11 @@
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const html = fs.readFileSync('index.html','utf8');
+test('CampusLoop page uses Oceanic Luxe palette',()=>{for(const color of ['#2D415A','#C56F4E','#F1E5DA','#FBF7F2'])assert.ok(html.includes(color));});
+test('Public marketplace and discovery are present',()=>{for(const phrase of ['Recently discovered','Discover campus finds','All categories','Search listings'])assert.ok(html.includes(phrase)||html.includes(phrase.toLowerCase()));});
+test('Student buying and selling portals are present',()=>{for(const phrase of ['Purchase requests','Buyer approvals','Items listed by you','My profile','Pending Review'])assert.ok(html.includes(phrase));});
+test('Admin moderation routes are present',()=>{for(const phrase of ['Listing approvals','Reports & flags','Student accounts'])assert.ok(html.includes(phrase));});
+test('Reservation rules are present',()=>{for(const phrase of ['You cannot request your own item.','Only the listing owner can decide a pending request.','Reserved','Completed'])assert.ok(html.includes(phrase));});
+test('Demo student and administrator accounts are present',()=>{for(const phrase of ['maaz@student.edu','abeerah@student.edu','wardah@student.edu','admin@student.edu'])assert.ok(html.includes(phrase));});
+test('Mobile responsive layout is included',()=>assert.ok(html.includes('@media(max-width:760px)')));
