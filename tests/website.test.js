@@ -9,3 +9,16 @@ test('Admin moderation routes are present',()=>{for(const phrase of ['Listing ap
 test('Reservation rules are present',()=>{for(const phrase of ['You cannot request your own item.','Only the listing owner can decide a pending request.','Reserved','Completed'])assert.ok(html.includes(phrase));});
 test('Demo student and administrator accounts are present',()=>{for(const phrase of ['maaz@student.edu','abeerah@student.edu','wardah@student.edu','admin@student.edu'])assert.ok(html.includes(phrase));});
 test('Mobile responsive layout is included',()=>assert.ok(html.includes('@media(max-width:760px)')));
+
+test('Generated product photography is included locally',()=>{
+ for(const image of ['assets/books.jpg','assets/camera.jpg','assets/lamp.jpg']) assert.ok(fs.existsSync(image));
+});
+test('Seller photo upload, preview and compression are implemented',()=>{
+ const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+ for(const phrase of ['id="itemPhotos"','multiple','photoPreview','compressListingPhoto','selectedPhotos.slice(0,5)']) assert.ok(html.includes(phrase));
+});
+test('Suggested campus items and photo-based product cards are present',()=>{
+ const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+ assert.ok(html.includes('Suggested for your campus'));
+ assert.ok(html.includes('function imageSrc(x)'));
+});

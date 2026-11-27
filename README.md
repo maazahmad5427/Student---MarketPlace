@@ -14,6 +14,9 @@ Open index.html in a modern browser. No build step is required. The demo stores 
 ## Included prototype workflows
 - Public marketplace landing page and listing discovery.
 - Category filters and text search.
+- Curated suggested-items section with generated local product photography.
+- Seller-uploaded listing photos (up to five per listing), compressed in-browser and displayed on cards and item details.
+- Gentle hover, entrance and product-image animations with reduced-motion support.
 - Student account sign-in and registration.
 - Student listings, profile details, buying requests and seller approval queue.
 - Seller approve/decline decisions and completion of approved exchanges.
