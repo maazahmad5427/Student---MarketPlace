@@ -20,6 +20,9 @@ Open index.html in a modern browser. No build step is required. The demo stores 
 - Administrator listing moderation.
 - Saved items and profile-specific listing/request metrics.
 - Responsive layouts for desktop and mobile.
+- Standalone administrator pages: `admin/dashboard.html`, `admin/approvals.html`, `admin/reports.html`, and `admin/users.html`.
+- Shared administrator stylesheet and script: `css/admin.css` and `js/admin.js`.
+- Administrator actions persist in the same browser Local Storage data used by the public app.
 
 ## Prototype boundary
 This is a front-end demonstration, not a production service. Local Storage is per browser/device, demo passwords are not securely stored, and client-side role checks are not a security boundary. Production use requires a backend, database, password hashing, institutional email verification, server-side authorization, secure sessions, privacy controls and backups. Payment and physical exchange are arranged by students outside the application.
